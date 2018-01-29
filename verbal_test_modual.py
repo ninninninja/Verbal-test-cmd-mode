@@ -2,6 +2,7 @@ import csv
 import random
 import json
 
+# Open files to record English verbals in a generator.
 class read_file:
     default_path = r'C:\Users\sfaaz007\Desktop\大惟'
     default_file = r'\vocabulary.csv'
@@ -19,7 +20,7 @@ class read_file:
         return tmplist
     
     def CSVtoJson(self, input_list):
-        
+        # Transfer data from CSV to Json format in generator.
         for ind, row in enumerate(input_list):
             yield {
                     'id':ind,
@@ -28,7 +29,7 @@ class read_file:
                     'meaning':row[2],
                    }
         
-
+# Actually define how the test work.
 class verbal_test:
     
     counts = 0
@@ -77,7 +78,7 @@ class verbal_test:
         elif ModeSelect == '3':
             self.ReviewMode(self.data)
 
-
+# Record incorrect replies on which questions, learned words and scores...
 class RecordClass:
     path = read_file.path
     def __init__(self, value):
